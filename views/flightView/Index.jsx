@@ -12,6 +12,7 @@ function Index(props) {
   let month = date.getMonth() + 1;
   let year = date.getFullYear();
   let today = `${month}/${day}/${year}`
+  
   return (
     <DefaultLayout>
 

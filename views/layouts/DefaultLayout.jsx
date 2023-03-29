@@ -9,13 +9,13 @@ function DefaultLayout(props) {
       </head>
       <body>
         
+       
+        
+        <div className="display">
         <nav>
           <a href="/flights">All Flights</a>
           <a href="/flights/new">New Flights</a>
         </nav>
-        
-        <div>
-
           {/* // renders everything inside the wrapping component tags */}
           {props.children}
         </div>

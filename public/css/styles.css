@@ -13,6 +13,7 @@
     background-color: lightblue;
     margin-bottom: 30px;
     border: 5px solid black;
+    padding: 20px;
 }
 .main{
     padding: 20px;
@@ -27,8 +28,12 @@
     display: inline-block;
     margin-left: 10px;
 }
+.display{
+    width: 70%;
+    margin: 0 auto;
+}
 nav{
-    height: 90px;
+    height: 100px;
     background-color: black;
     display: flex;
     justify-content: space-around;
@@ -62,4 +67,11 @@ button:hover{
 .flights:hover{
     cursor: pointer;
     font-size:large;
+}
+p{
+    color: black;
+}
+.white{
+    color: white;
+    font-size: 100px;
 }

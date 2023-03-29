@@ -17,7 +17,7 @@ function New() {
   console.log(today)
   return (
     <DefaultLayout>
-      <div className="center">
+      <div className="main center">
         <h1>New Flight</h1>
         <form action="/flights" method="POST">
           <label htmlFor="airline">Airline :</label>
