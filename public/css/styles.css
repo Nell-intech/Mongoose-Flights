@@ -68,7 +68,7 @@ button:hover{
     cursor: pointer;
     font-size:large;
 }
-p{
+p,h2{
     color: black;
 }
 .white{

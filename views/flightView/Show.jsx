@@ -4,6 +4,17 @@ import DefaultLayout from "../layouts/DefaultLayout";
 function Show(props) {
   // always passed through controller
   // console.log("THESE ARE MY PROPS "+props.flights.destinations[0])
+  let airportsDestinations = ['AUS', 'DAL', 'LAX', 'SAN', 'SEA']
+    let airportsInObjt = []
+
+  for (let i = 0; i < props.flights.destinations.length; i++) {
+    airportsInObjt.push(props.flights.destinations[i].airport.toString())
+}
+
+for (let i = 0; i < airportsInObjt.length; i++) {
+    const index = airportsDestinations.findIndex(item => item == airportsInObjt[i])
+    airportsDestinations.splice(index, 1)
+}
   return (
     <DefaultLayout>
       <div className="main center ">
@@ -19,9 +30,14 @@ function Show(props) {
           <label htmlFor="airport">Add A Destination</label>
           <br />
           <select name="airport" id="airport">
-            <option value="AUS">Austin</option>
+            {/* <option value="AUS">Austin</option>
             <option value="DAL">Dallas</option>
-            <option value="SAN">San Antonio</option>
+            <option value="SAN">San Antonio</option> */}
+            {airportsDestinations.map((destination, index) => 
+                                <div key={index}>
+                                    <option value={destination}>{destination}</option>
+                                </div>
+                            )}
           </select>
           <input type="datetime-local" id="arrival"
             name="arrival" />
@@ -35,8 +51,8 @@ function Show(props) {
               <div className="flight-ctn" key={index}>
                 <div>
                 <p>Airport: {item.airport}</p>
-                <p>Arrival: {item.arrival.toLocaleTimeString()}</p>
-                <p>Arrival: {item.arrival.toLocaleDateString()}</p>
+                <p>Arrival Date : {item.arrival.toLocaleDateString()} at {item.arrival.toLocaleTimeString()}</p>
+                <p>{index}</p>
 
                 <form className="destination-Btn"  action={`/flights/${props.flights._id}/destinations/${item._id}`}>
                   <button>Edit Destination</button>

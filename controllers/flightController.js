@@ -22,7 +22,7 @@ module.exports.index = async (req, res) => {
 // Those anonymous callback functions now have names: "index" and "show"
 module.exports.show = async (req, res) => {
   try {
-    const flights = await Flights.findById(req.params.id).populate('destinations');
+    const flights = await Flights.findById(req.params.id).populate({path: 'destinations', options: {sort: {arrival: 1}}})
     res.render("flightView/Show", { flights });
   } catch (err) {
     console.log(err);
